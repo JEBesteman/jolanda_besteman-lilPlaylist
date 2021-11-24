@@ -1,48 +1,32 @@
 import React, { Component } from "react";
 import SongForm from "./SongForm";
 import SongList from "./SongList";
-
+import { nanoid } from "nanoid"; 
 
 class SongOverview extends Component {
   constructor() {
     super();
     this.state = {
       songs: [],
-      title: "",
-      artist: "",
-      genre: "",
-      rating: 0,
-
     };
   }
 
-  handleChange = (event) => {
-    // const { name, value } = event.target;
-    // this.setState({
-    //   [name] : value
-    // })
-    console.log(event.target.value);
-  }
-
-  // addSong = (song) => {
-  //   // doe iets om de state aan te passen
-  // };
+  addNewSong = (song) => {
+    const newSong = {
+      id: nanoid(),
+      title: song.title,
+      artist: song.artist,
+      genre: song.genre,
+      rating: song.rating,
+    };
+    this.setState({ songs: this.state.songs.concat(newSong) });
+  };
 
   render() {
     return (
       <div>
-        <SongForm handleChange={this.handleChange} />
-        {/* <SongForm addSong={this.addSong} />
-        <table style={{ width: "100%" }}>
-          <tr className="song-header">
-            <th className="song-row__item">Song</th>
-            <th className="song-row__item">Artist</th>
-            <th className="song-row__item">Genre</th>
-            <th className="song-row__item">Rating</th>
-          </tr>
-        </table>
-        <SongList songs={this.state.songs} /> */}
-        <SongList />
+        <SongForm onSubmit={this.addNewSong} />
+        <SongList songs={this.state.songs} />
       </div>
     );
   }
