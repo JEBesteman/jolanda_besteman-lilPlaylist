@@ -1,8 +1,10 @@
 import React from "react";
 import ListItem from "./ListItem";
 
-const SongList = ({ songs }) => {
-  const songItems = songs.map((song) => <ListItem key={song.id} song={song} />);
+const SongList = ({ songs, deleteSong }) => {
+  const songItems = songs.map((song) => (
+    <ListItem key={song.id} song={song} deleteSong={deleteSong} />
+  ));
   return (
     <table style={{ width: "100%" }}>
       <tr className="song-header">
