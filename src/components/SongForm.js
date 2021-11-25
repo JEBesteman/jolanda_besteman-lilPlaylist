@@ -48,7 +48,7 @@ class SongForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className="formInput">
         <input
           type="text"
           name="title"

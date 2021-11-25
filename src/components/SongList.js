@@ -6,17 +6,20 @@ const SongList = ({ songs, deleteSong }) => {
     <ListItem key={song.id} song={song} deleteSong={deleteSong} />
   ));
   return (
-    <table style={{ width: "100%" }}>
-      <thead>
-        <tr className="song-header">
-          <th className="song-row__item">Song</th>
-          <th className="song-row__item">Artist</th>
-          <th className="song-row__item">Genre</th>
-          <th className="song-row__item">Rating</th>
-        </tr>
-      </thead>
-      <tbody>{songItems}</tbody>
-    </table>
+    <div className="playlist">
+      <table>
+        <thead>
+          <tr className="song-header">
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>{songItems}</tbody>
+      </table>
+    </div>
   );
 };
 

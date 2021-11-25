@@ -14,19 +14,21 @@ class SongOverview extends Component {
           artist: "evenescence",
           genre: "rock",
           rating: "★★★★★",
-        }, {
+        },
+        {
           id: 2,
           title: "crawling",
           artist: "linkin park",
           genre: "rock",
           rating: "★★★★★",
-        }, {
+        },
+        {
           id: 3,
           title: "something just like this",
           artist: "the chainsmockers",
           genre: "pop",
           rating: "★★★★☆",
-        }
+        },
       ],
     };
   }
