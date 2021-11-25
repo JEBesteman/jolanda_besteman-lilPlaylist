@@ -7,7 +7,27 @@ class SongOverview extends Component {
   constructor() {
     super();
     this.state = {
-      songs: [],
+      songs: [
+        {
+          id: 1,
+          title: "my immortal",
+          artist: "evenescence",
+          genre: "rock",
+          rating: "★★★★★",
+        }, {
+          id: 2,
+          title: "crawling",
+          artist: "linkin park",
+          genre: "rock",
+          rating: "★★★★★",
+        }, {
+          id: 3,
+          title: "something just like this",
+          artist: "the chainsmockers",
+          genre: "pop",
+          rating: "★★★★☆",
+        }
+      ],
     };
   }
 
@@ -19,12 +39,10 @@ class SongOverview extends Component {
       genre: song.genre,
       rating: song.rating,
     };
-    console.log(typeof newSong.id);
     this.setState({ songs: this.state.songs.concat(newSong) });
   };
 
   deleteSong = (id) => {
-    console.log(id);
     const currentList = this.state.songs;
     const newList = currentList.filter((song) => song.id !== id);
     this.setState({ songs: newList });

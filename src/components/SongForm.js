@@ -12,35 +12,10 @@ class SongForm extends Component {
     };
   }
 
-  // handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  //   console.log(event.target.value);
-  // };
-
-  titleInput = (event) => {
+  handleChange = (event) => {
+    const { name, value } = event.target;
     this.setState({
-      title: event.target.value,
-    });
-  };
-
-  artistInput = (event) => {
-    this.setState({
-      artist: event.target.value,
-    });
-  };
-
-  genreInput = (event) => {
-    this.setState({
-      genre: event.target.value,
-    });
-  };
-
-  ratingInput = (event) => {
-    this.setState({
-      rating: event.target.value,
+      [name]: value,
     });
   };
 
@@ -79,19 +54,19 @@ class SongForm extends Component {
           name="title"
           placeholder="title"
           value={this.state.title}
-          onChange={this.titleInput}
+          onChange={this.handleChange}
         />
         <input
           type="text"
           name="artist"
           placeholder="artist"
           value={this.state.artist}
-          onChange={this.artistInput}
+          onChange={this.handleChange}
         />
         <select
           value={this.state.genre}
           name="genre"
-          onChange={this.genreInput}
+          onChange={this.handleChange}
         >
           <option value="">--- Choose Genre ---</option>
           <option value="rock">Rock</option>
@@ -102,14 +77,14 @@ class SongForm extends Component {
         <select
           value={this.state.rating}
           name="rating"
-          onChange={this.ratingInput}
+          onChange={this.handleChange}
         >
-          <option value="">--- stars rating ---</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          <option value="">--- Stars Rating ---</option>
+          <option value="★☆☆☆☆">★☆☆☆☆</option>
+          <option value="★★☆☆☆">★★☆☆☆</option>
+          <option value="★★★☆☆">★★★☆☆</option>
+          <option value="★★★★☆">★★★★☆</option>
+          <option value="★★★★★">★★★★★</option>
         </select>
         <button type="submit">Add song</button>
       </form>
